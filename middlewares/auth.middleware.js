@@ -5,7 +5,7 @@ const isAuthenticated = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
 
-    if (!authHeader || authHeader.startsWith("Bearer")) {
+    if (!authHeader || !authHeader.startsWith("Bearer")) {
       throw new Error("Invalid token format!");
     }
 
